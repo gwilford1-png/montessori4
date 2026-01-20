@@ -2,32 +2,27 @@ import { Activity, ActivityBundle } from './types';
 
 const AGE_ORDER = ["0-3 Months", "3-6 Months", "6-12 Months", "12-18 Months", "18-24 Months", "24+ Months", "3 Years +"];
 
-export const AGE_FILTERS = ["All", ...AGE_ORDER];
-
-/**
- * RAW_DATA - The complete 171-item database.
- * Carefully curated with authentic Montessori activity names.
- */
-const RAW_DATA: any[] = [
-  // 0-3 MONTHS (Visual/Auditory/Tactile Foundations)
+export const INITIAL_ACTIVITIES = [
   {
-  id: 1,
-  title: "Munari Mobile",
-  category: "Visual",
-  filter_tag: "0-3 Months",
-  what_is_it: "Mathematically-balanced black and white geometric shapes.",
-  items_required: ["Munari Mobile"],
-  thumbnail: "images/Munari_Mobile.png",
-},
-{
-  id: 2,
-  title: "Melodic Anchoring",
-  category: "Auditory",
-  filter_tag: "0-3 Months",
-  what_is_it: "A consistent, gentle melody used for acoustic comfort.",
-  items_required: ["Wooden music box"],
-  thumbnail: "images/melodic_anchoring.png",
-},
+    id: 1,
+    title: "Munari Mobile",
+    category: "Visual",
+    filter_tag: "0-3 Months",
+    what_is_it: "Mathematically-balanced black and white geometric shapes.",
+    items_required: ["Munari Mobile"],
+    thumbnail: "images/Munari_Mobile.png",
+  },
+  {
+    id: 2,
+    title: "Melodic Anchoring",
+    category: "Auditory",
+    filter_tag: "0-3 Months",
+    what_is_it: "A consistent, gentle melody used for acoustic comfort.",
+    items_required: ["Wooden music box"],
+    thumbnail: "images/melodic_anchoring.png",
+  }
+];
+
 
   { id: 3, title: "Octahedron Mobile", cat: "Visual", age: "0-3 Months", act: "3D primary color study.", desc: "Three metallic 3D shapes in primary colors.", ben: "Develops depth perception.", item: "Octahedron Mobile", ref: "https://montessoriguide.org/", prompt: "Octahedrons." },
   { id: 4, title: "Black & White Cards", cat: "Visual", age: "0-3 Months", act: "High-contrast silhouettes.", desc: "Simple nature silhouettes for newborn focus.", ben: "Stimulates visual discrimination.", item: "Contrast cards", ref: "https://montessoriguide.org/", prompt: "B&W Cards." },
