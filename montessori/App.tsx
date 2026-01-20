@@ -1,5 +1,9 @@
 
-import { ArrowLeft, Baby, ChevronDown, Filter, Info, LayoutGrid, List, Menu, Search, Shapes, ShieldCheck, ShoppingBag, Sparkles, X, Brain, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, Baby, Ch<img
+  src="/montessori4/images/melodic_anchoring.png"
+  alt="test"
+  style={{ width: 200, border: "1px solid red" }}
+/>evronDown, Filter, Info, LayoutGrid, List, Menu, Search, Shapes, ShieldCheck, ShoppingBag, Sparkles, X, Brain, CheckCircle2 } from 'lucide-react';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import ActivityCard from './components/ActivityCard';
 import ActivityDetail from './components/ActivityDetail';
