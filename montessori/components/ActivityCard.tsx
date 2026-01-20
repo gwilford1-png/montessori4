@@ -46,12 +46,26 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onClick }) => {
       <div className="p-4 shrink-0">
        <div className="w-28 h-28 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100 group-hover:bg-blue-50/50 transition-colors">
   {activity.thumbnail ? (
+   {activity.thumbnail ? (
+  <div className="w-full h-full flex flex-col items-center justify-center p-2">
     <img
       src={`${import.meta.env.BASE_URL}${activity.thumbnail}`}
       alt={activity.title}
-      className="w-full h-full object-contain p-2"
-      loading="lazy"
+      className="w-full h-full object-contain"
+      style={{ border: "2px solid red" }}
     />
+    <div className="mt-1 text-[9px] text-red-600 break-all leading-tight">
+      {`${import.meta.env.BASE_URL}${activity.thumbnail}`}
+    </div>
+  </div>
+) : (
+  <GeminiIllustration
+    title={activity.title}
+    category={activity.category}
+    className="w-full h-full scale-90"
+  />
+)}
+
   ) : (
     <GeminiIllustration
       title={activity.title}
