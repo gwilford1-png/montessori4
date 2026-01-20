@@ -70,11 +70,6 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-[#1E293B] font-sans pb-16 transition-colors duration-500">
-      <img
-  src={`${import.meta.env.BASE_URL}images/melodic_anchoring.png`}
-  alt="test"
-  style={{ width: 200, border: "2px solid red", marginBottom: 16 }}
-/>
       <style>{`
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
