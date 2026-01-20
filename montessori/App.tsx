@@ -1,19 +1,32 @@
+import {
+  ArrowLeft,
+  Baby,
+  ChevronDown,
+  Filter,
+  Info,
+  LayoutGrid,
+  List,
+  Menu,
+  Search,
+  Shapes,
+  ShieldCheck,
+  ShoppingBag,
+  Sparkles,
+  X,
+  Brain,
+  CheckCircle2
+} from "lucide-react";
 
-import { ArrowLeft, Baby, Ch<img
-  src="/montessori4/images/melodic_anchoring.png"
-  alt="test"
-  style={{ width: 200, border: "1px solid red" }}
-/>evronDown, Filter, Info, LayoutGrid, List, Menu, Search, Shapes, ShieldCheck, ShoppingBag, Sparkles, X, Brain, CheckCircle2 } from 'lucide-react';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import ActivityCard from './components/ActivityCard';
-import ActivityDetail from './components/ActivityDetail';
-import ActivityRow from './components/ActivityRow';
-import SafetyModal from './components/SafetyModal';
-import ShoppingList from './components/ShoppingList';
-import BundleView from './components/BundleView';
-import ExecutiveFunctionInfo from './components/ExecutiveFunctionInfo';
-import { AGE_FILTERS, INITIAL_ACTIVITIES, ACTIVITY_BUNDLES } from './constants';
-import { Activity, SectionType, ViewMode } from './types';
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import ActivityCard from "./components/ActivityCard";
+import ActivityDetail from "./components/ActivityDetail";
+import ActivityRow from "./components/ActivityRow";
+import SafetyModal from "./components/SafetyModal";
+import ShoppingList from "./components/ShoppingList";
+import BundleView from "./components/BundleView";
+import ExecutiveFunctionInfo from "./components/ExecutiveFunctionInfo";
+import { AGE_FILTERS, INITIAL_ACTIVITIES, ACTIVITY_BUNDLES } from "./constants";
+import { Activity, SectionType, ViewMode } from "./types";
 
 const App: React.FC = () => {
   const [activities] = useState<Activity[]>(INITIAL_ACTIVITIES);
@@ -57,6 +70,11 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-[#1E293B] font-sans pb-16 transition-colors duration-500">
+      <img
+  src={`${import.meta.env.BASE_URL}images/melodic_anchoring.png`}
+  alt="test"
+  style={{ width: 200, border: "2px solid red", marginBottom: 16 }}
+/>
       <style>{`
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
