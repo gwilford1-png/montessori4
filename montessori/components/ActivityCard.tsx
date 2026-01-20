@@ -42,13 +42,25 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity, onClick }) => {
       onClick={() => onClick(activity)}
       className="bg-white rounded-2xl flex flex-row items-center cursor-pointer group transition-all duration-300 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-slate-50 mb-4 mx-1"
     >
-         <div className="p-4 shrink-0">
-  <img
-    src="/montessori4/images/Munari_Mobile.png"
-    alt="proof"
-    style={{ width: 120, height: 120, border: "3px solid red" }}
-  />
+       <div className="p-4 shrink-0">
+  <div className="w-28 h-28 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100 group-hover:bg-blue-50/50 transition-colors overflow-hidden">
+    {activity.thumbnail ? (
+      <img
+        src={`${import.meta.env.BASE_URL}${activity.thumbnail}`}
+        alt={activity.title}
+        className="w-full h-full object-contain p-2"
+        loading="lazy"
+      />
+    ) : (
+      <GeminiIllustration
+        title={activity.title}
+        category={activity.category}
+        className="w-full h-full scale-90"
+      />
+    )}
+  </div>
 </div>
+
 
 
       {/* Content Area */}
