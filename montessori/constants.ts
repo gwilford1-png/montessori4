@@ -93,51 +93,6 @@ const COG_MODIFIERS = ["Spindles", "Golden Beads", "Number Rods", "Sandpaper Num
 const LAN_BASE = ["Tracing", "Building", "Matching", "Naming", "Sorting"];
 const LAN_MODIFIERS = ["Sandpaper Letters", "Movable Alphabet", "Phonetic Objects", "Grammar Symbols", "Initial Sounds", "Rhyming Cards", "Vocabulary Envelopes", "Action Cards"];
 
-// High-fidelity backfill logic
-for (let i = 0; i < 171; i++) {
-  const existingIndex = RAW_DATA.findIndex(d => d.id === i + 1);
-  if (existingIndex !== -1) continue;
-
-  const ageIdx = Math.min(Math.floor(i / 25), AGE_ORDER.length - 1);
-  const ageGroup = AGE_ORDER[ageIdx];
-  
-  let base, modifier, cat;
-  const mod = i % 4;
-  
-  if (mod === 0) {
-    base = PL_BASE[i % PL_BASE.length];
-    modifier = PL_MODIFIERS[i % PL_MODIFIERS.length];
-    cat = "Practical Life";
-  } else if (mod === 1) {
-    base = SEN_BASE[i % SEN_BASE.length];
-    modifier = SEN_MODIFIERS[i % SEN_MODIFIERS.length];
-    cat = "Sensory";
-  } else if (mod === 2) {
-    base = COG_BASE[i % COG_BASE.length];
-    modifier = COG_MODIFIERS[i % COG_MODIFIERS.length];
-    cat = "Cognitive";
-  } else {
-    base = LAN_BASE[i % LAN_BASE.length];
-    modifier = LAN_MODIFIERS[i % LAN_MODIFIERS.length];
-    cat = "Language";
-  }
-
-  const finalTitle = `${base} ${modifier}`;
-
-  RAW_DATA.push({
-    id: i + 1,
-    title: finalTitle,
-    cat: cat,
-    age: ageGroup,
-    act: `Focused exploration using ${modifier.toLowerCase()}.`,
-    desc: `An essential lesson in the Montessori ${cat.toLowerCase()} curriculum.`,
-    ben: "Supports neural development through precise movements and deep concentration.",
-    item: modifier + " set",
-    ref: "https://amshq.org/",
-    prompt: finalTitle, 
-    thumbnail: "",
-  });
-}
 
 const generateSteps = (item: any) => {
   const steps = [];
