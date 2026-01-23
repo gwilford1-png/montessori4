@@ -163,30 +163,30 @@ const generateSteps = (item: any) => {
   
   return steps;
 };
-export const INITIAL_ACTIVITIES: Activity[] =
-  RAW_DATA
-    .map(item => ({
-      id: item.id,
-      title: item.title,
-      category: item.cat,
-      filter_tag: item.age,
-      type: 'Activity',
-      description: item.desc,
-      what_is_it: item.act,
-      why_is_it_good: item.ben,
-      dos: ["Ensure a quiet environment.", "Follow the child's lead."],
-      donts: ["Don't rush the experience.", "Don't correct mistakes immediately."],
-      steps: generateSteps(item),
-      items_required: item.item === "none" ? [] : [item.item],
-      reference_link: item.ref,
-      image_prompt: item.prompt,
-      thumbnail: item.thumbnail,
-    }))
-    .sort((a, b) =>
-      AGE_ORDER.indexOf(a.filter_tag) - AGE_ORDER.indexOf(b.filter_tag)
-    );
+export const INITIAL_ACTIVITIES: Activity[] = RAW_DATA
+  .map(item => ({
+    id: item.id,
+    title: item.title,
+    category: item.cat,
+    filter_tag: item.age,
+    type: 'Activity',
+    description: item.desc,
+    what_is_it: item.act,
+    why_is_it_good: item.ben,
+    dos: ["Ensure a quiet environment.", "Follow the child's lead."],
+    donts: ["Don't rush the experience.", "Don't correct mistakes immediately."],
+    steps: generateSteps(item),
+    items_required: item.item === "none" ? [] : [item.item],
+    reference_link: item.ref,
+    image_prompt: item.prompt,
+    thumbnail: item.thumbnail,
+  }))
+  .sort((a, b) => {
+    const ageDiff =
+      AGE_ORDER.indexOf(a.filter_tag) - AGE_ORDER.indexOf(b.filter_tag);
 
-
+    return ageDiff !== 0 ? ageDiff : a.id - b.id;
+  });
 
 
 export const ACTIVITY_BUNDLES: ActivityBundle[] = [
