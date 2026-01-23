@@ -31,7 +31,7 @@ const RAW_DATA: any[] = [
     thumbnail: "images/melodic_anchoring.png",
   },
 
-  { id: 3, title: "Octahedron Mobile", cat: "Visual", age: "0-3 Months", act: "3D primary color study.", desc: "Three metallic 3D shapes in primary colors.", ben: "Develops depth perception.", item: "Octahedron Mobile", ref: "https://montessoriguide.org/", prompt: "Octahedrons." },
+  { id: 3, title: "Octahedron Mobile", cat: "Visual", age: "0-3 Months", act: "3D primary color study.", desc: "Three metallic 3D shapes in primary colors.", ben: "Develops depth perception.", item: "Octahedron Mobile", ref: "https://montessoriguide.org/", prompt: "Octahedrons.", thumbnail: "images/Octahedron_Mobile.png", },
   { id: 4, title: "Black & White Cards", cat: "Visual", age: "0-3 Months", act: "High-contrast silhouettes.", desc: "Simple nature silhouettes for newborn focus.", ben: "Stimulates visual discrimination.", item: "Contrast cards", ref: "https://montessoriguide.org/", prompt: "B&W Cards." },
   { id: 5, title: "Gobbi Mobile", cat: "Visual", age: "0-3 Months", act: "Subtle shade discrimination.", desc: "Five spheres wrapped in silk thread of graduating shades.", ben: "Refines color discrimination.", item: "Gobbi Mobile", ref: "https://mariamontessori.com/", prompt: "Silk spheres." },
   { id: 6, title: "The Dancers Mobile", cat: "Visual", age: "0-3 Months", act: "Observe shimmering movement.", desc: "Stylized figures made of iridescent paper.", ben: "Engages moving object focus.", item: "Dancers Mobile", ref: "https://amshq.org/", prompt: "Dancer figures." },
