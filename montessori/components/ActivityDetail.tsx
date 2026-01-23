@@ -141,20 +141,28 @@ const ActivityDetail: React.FC<ActivityDetailProps> = ({ activity, onBack, onNex
         </div>
 
         {/* Hero Visual */}
-        <div className="relative mb-16">
-          <div className="aspect-[16/9] rounded-[3rem] overflow-hidden bg-white shadow-xl border border-white">
-            <GeminiIllustration 
-              title={activity.title}
-              category={activity.category}
-              className="w-full h-full opacity-80"
-            />
-            <div className="absolute bottom-6 left-6 bg-slate-900/90 backdrop-blur-md px-5 py-2.5 rounded-2xl flex items-center gap-3 text-white">
-              <ListOrdered size={16} />
-              <span className="text-[10px] font-bold uppercase tracking-widest">Step-by-step guide</span>
-            </div>
-          </div>
-        </div>
+<div className="relative mb-16">
+  <div className="aspect-[16/9] rounded-[3rem] overflow-hidden bg-white shadow-xl border border-white">
+    {activity.thumbnail ? (
+      <img
+        src={`${import.meta.env.BASE_URL}${activity.thumbnail}`}
+        alt={activity.title}
+        className="w-full h-full object-cover"
+      />
+    ) : (
+      <GeminiIllustration
+        title={activity.title}
+        category={activity.category}
+        className="w-full h-full opacity-80"
+      />
+    )}
 
+    <div className="absolute bottom-6 left-6 bg-slate-900/90 backdrop-blur-md px-5 py-2.5 rounded-2xl flex items-center gap-3 text-white">
+      <ListOrdered size={16} />
+      <span className="text-[10px] font-bold uppercase tracking-widest">Step-by-step guide</span>
+    </div>
+  </div>
+</div>
         {/* Instructions Sequence */}
         <div className="relative space-y-12 mb-20 px-4">
           <div className="absolute left-[27px] top-4 bottom-4 w-1 bg-slate-100 rounded-full"></div>
