@@ -45,7 +45,7 @@ const RAW_DATA: any[] = [
 
   // 3-6 MONTHS
   { id: 26, title: "Interlocking Rings", cat: "Tactile", age: "3-6 Months", act: "Two-hand transfer.", desc: "Two wooden rings joined together.", ben: "Hand-to-hand transfer.", item: "Interlocking rings", ref: "https://amshq.org/", prompt: "Joined rings." },
-  { id: 27, title: "Amish Puzzle Ball", cat: "Tactile", age: "3-6 Months", act: "Grasp and pull.", desc: "Sectioned fabric ball easy to grab.", ben: "Builds hand strength.", item: "Puzzle ball", ref: "https://amshq.org/", prompt: "Fabric ball." },
+  { id: 27, title: "Amish Puzzle Ball", cat: "Tactile", age: "3-6 Months", act: "Grasp and pull.", desc: "Sectioned fabric ball easy to grab.", ben: "Builds hand strength.", item: "Puzzle ball", ref: "https://amshq.org/", prompt: "Fabric ball.", thumbnail: "images/Amish_Puzzle_Ball.png", },
   { id: 28, title: "Textured Sensory Balls", cat: "Sensory", age: "3-6 Months", act: "Surface exploration.", desc: "Nubby, smooth, and ridged balls.", ben: "Refines tactile sense.", item: "Textured balls", ref: "https://amshq.org/", prompt: "Bumpy balls." },
 
   // 6-12 MONTHS
