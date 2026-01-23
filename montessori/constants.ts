@@ -1,28 +1,35 @@
 import { Activity, ActivityBundle } from './types';
 
 const AGE_ORDER = ["0-3 Months", "3-6 Months", "6-12 Months", "12-18 Months", "18-24 Months", "24+ Months", "3 Years +"];
+export const AGE_FILTERS = ["All", ...AGE_ORDER];
 
-export const INITIAL_ACTIVITIES = [
+const RAW_DATA: any[] = [
   {
     id: 1,
     title: "Munari Mobile",
-    category: "Visual",
-    filter_tag: "0-3 Months",
-    what_is_it: "Mathematically-balanced black and white geometric shapes.",
-    items_required: ["Munari Mobile"],
+    cat: "Visual",
+    age: "0-3 Months",
+    act: "Observe high-contrast shapes.",
+    desc: "Mathematically-balanced black and white geometric shapes.",
+    ben: "Builds early visual concentration.",
+    item: "Munari Mobile",
+    ref: "https://amshq.org/",
+    prompt: "Black and white shapes.",
     thumbnail: "images/Munari_Mobile.png",
   },
   {
     id: 2,
     title: "Melodic Anchoring",
-    category: "Auditory",
-    filter_tag: "0-3 Months",
-    what_is_it: "A consistent, gentle melody used for acoustic comfort.",
-    items_required: ["Wooden music box"],
+    cat: "Auditory",
+    age: "0-3 Months",
+    act: "Listen to a soothing anchor.",
+    desc: "A consistent, gentle melody used for acoustic comfort.",
+    ben: "Builds auditory tracking.",
+    item: "Wooden music box",
+    ref: "https://amshq.org/",
+    prompt: "Music box.",
     thumbnail: "images/melodic_anchoring.png",
-  }
-];
-
+  },
 
   { id: 3, title: "Octahedron Mobile", cat: "Visual", age: "0-3 Months", act: "3D primary color study.", desc: "Three metallic 3D shapes in primary colors.", ben: "Develops depth perception.", item: "Octahedron Mobile", ref: "https://montessoriguide.org/", prompt: "Octahedrons." },
   { id: 4, title: "Black & White Cards", cat: "Visual", age: "0-3 Months", act: "High-contrast silhouettes.", desc: "Simple nature silhouettes for newborn focus.", ben: "Stimulates visual discrimination.", item: "Contrast cards", ref: "https://montessoriguide.org/", prompt: "B&W Cards." },
@@ -128,7 +135,8 @@ for (let i = 0; i < 171; i++) {
     ben: "Supports neural development through precise movements and deep concentration.",
     item: modifier + " set",
     ref: "https://amshq.org/",
-    prompt: finalTitle
+    prompt: finalTitle, 
+    thumbnail: "",
   });
 }
 
@@ -155,9 +163,8 @@ const generateSteps = (item: any) => {
   
   return steps;
 };
-
 export const INITIAL_ACTIVITIES: Activity[] = RAW_DATA.map(item => ({
-  id: String(item.id),
+  id: item.id,
   title: item.title,
   category: item.cat,
   filter_tag: item.age,
@@ -170,8 +177,11 @@ export const INITIAL_ACTIVITIES: Activity[] = RAW_DATA.map(item => ({
   steps: generateSteps(item),
   items_required: item.item === "none" ? [] : [item.item],
   reference_link: item.ref,
-  image_prompt: item.prompt
+  image_prompt: item.prompt,
+  thumbnail: item.thumbnail,
 }));
+
+
 
 export const ACTIVITY_BUNDLES: ActivityBundle[] = [
   {
